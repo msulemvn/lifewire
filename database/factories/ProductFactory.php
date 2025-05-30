@@ -22,4 +22,18 @@ class ProductFactory extends Factory
             'category_id' => $this->faker->randomElement($categoryIds),
         ]);
     }
+
+    public function withTitle(string $title)
+    {
+        return $this->state([
+            'title' => $title,
+        ]);
+    }
+
+    public function withImage(string $imageUrl)
+    {
+        return $this->state([
+            'image' => $imageUrl,
+        ]);
+    }
 }
