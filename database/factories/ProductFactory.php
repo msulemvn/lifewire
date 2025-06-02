@@ -9,10 +9,14 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->words(3, true),
+            'name' => $this->faker->words(3, true),
             'price' => $this->faker->randomFloat(2, 5, 1000),
             'description' => $this->faker->paragraph(),
-            'image' => $this->faker->imageUrl(640, 480, 'technics', true),
+            'rating' => $this->faker->randomFloat(2, 3, 5),
+            'image' => $this->faker->imageUrl(640, 480, 'fashion', true),
+            'secondary_image' => $this->faker->imageUrl(640, 480, 'fashion', true),
+            'url' => $this->faker->url(),
+            'type' => $this->faker->randomElement(['simple', 'variable']),
         ];
     }
 
@@ -23,10 +27,24 @@ class ProductFactory extends Factory
         ]);
     }
 
-    public function withTitle(string $title)
+    public function withName(string $title)
     {
         return $this->state([
-            'title' => $title,
+            'name' => $title,
+        ]);
+    }
+
+    public function withPrice(float $price)
+    {
+        return $this->state([
+            'price' => $price,
+        ]);
+    }
+
+    public function withRating(float $rating)
+    {
+        return $this->state([
+            'rating' => $rating,
         ]);
     }
 
@@ -34,6 +52,27 @@ class ProductFactory extends Factory
     {
         return $this->state([
             'image' => $imageUrl,
+        ]);
+    }
+
+    public function withSecondaryImage(?string $secondaryImageUrl)
+    {
+        return $this->state([
+            'secondary_image' => $secondaryImageUrl,
+        ]);
+    }
+
+    public function withUrl(string $url)
+    {
+        return $this->state([
+            'url' => $url,
+        ]);
+    }
+
+    public function withType(string $type)
+    {
+        return $this->state([
+            'type' => $type,
         ]);
     }
 }

@@ -14,14 +14,28 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            "Golf Shoes",
-            "Basketball Shoes",
-            "Men's Shoes",
-            "Men\'s Washed T-Shirt",
+            [
+                'name' => 'Clothing',
+                'count' => 47,
+                'url' => 'https://themes.woocommerce.com/storefront/product-category/clothing/',
+                'image' => 'https://themes.woocommerce.com/storefront/wp-content/uploads/sites/78/2014/09/clothing.jpg'
+            ],
+            [
+                'name' => 'Kitchen',
+                'count' => 28,
+                'url' => 'https://themes.woocommerce.com/storefront/product-category/kitchen/',
+                'image' => 'https://themes.woocommerce.com/storefront/wp-content/uploads/sites/78/2015/11/kitchen-category.jpg'
+            ],
+            [
+                'name' => 'Electronics',
+                'count' => 39,
+                'url' => 'https://themes.woocommerce.com/storefront/product-category/electronics/',
+                'image' => 'https://themes.woocommerce.com/storefront/wp-content/uploads/sites/78/2015/11/electronics-category.jpg'
+            ],
         ];
 
-        foreach ($categories as $categoryName) {
-            Category::create(['name' => $categoryName]);
+        foreach ($categories as $category) {
+            Category::create($category);
         }
     }
 }
