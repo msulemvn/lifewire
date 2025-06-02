@@ -5,7 +5,7 @@
                 <span>Welcome to Lifewire</span>
             </h1>
             <p class="text-xl mb-6">Your trusted source for online shopping.</p>
-            <flux:button href="/get-started" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+            <flux:button href="#" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
                 Get Started →
             </flux:button>
         </div>
